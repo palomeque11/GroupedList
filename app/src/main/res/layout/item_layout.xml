@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="15dp"
-    app:cardElevation="20dp">
+    style="@style/ConstraintRounded">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cons_layout"
@@ -16,15 +14,13 @@
 
 
         <TextView
-            android:id="@+id/tv_day"
+            android:id="@+id/tv_titleCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            style="@style/TextViewTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Today" />
+            tools:text="ListId" />
 
         <View
             android:id="@+id/divider"
@@ -32,16 +28,15 @@
             android:layout_height="1dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_day"
+            app:layout_constraintTop_toBottomOf="@id/tv_titleCard"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"/>
 
         <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/hour_results"
+            android:id="@+id/item_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/divider"
-            xmlns:tools="http://schemas.android.com/tools"
             tools:listitem="@layout/item_time_layout"/>
 ">
     </androidx.constraintlayout.widget.ConstraintLayout>
